@@ -17,13 +17,21 @@ The `setMatch` property can either be a boolean or an object.
 If `setMatch` is `true`, models added to the collection will need to match all properties - if it is `false`, setMatch will not be used and the default behaviour occurs.
 
 ### setMatch : object ###
-If `setMatch` is an object, there are many different parameters, all of which are optional, which may be defined:
+If `setMatch` is an object, there are many different parameters which may be defined, all of which are optional:
 
-#### option - match ####
-`match` provides an array of names of properties which must be matched, a string of a single name of a property which must be matched or a function which takes a property name and returns true if the property should be matched, and false otherwise. If `match` is not defined, all parameters must be matched. If you specify that `id` must be matched, matching will be dependent on the `id` parameter (see below).
+#### match (optional) ####
+`match` provides an array of names of properties which must be matched, a string of a single name of a property which must be matched or a function which takes a property name and returns true if the property should be matched, and false otherwise.
 
-#### option - id ####
-`id` allows you to specify what the behaviour should be regarding the `id` property of models when it is defined for the model passed to `set`. If this value is `retain`, then the value of the `id` property of the resulting model will be that of the model before `set` was called. If this value is 'inherit', then the value of the `id` property of the resulting model will be that of the incoming model passed into `set`. If this is not defined, then if the model passed to set has a `id` parameter, this will need to match that of the model in the collection or a separate model will be added.
+If `match` is not defined, all parameters must be matched. If you specify that `id` must be matched, matching will be dependent on the `id` parameter (see below).
 
-#### option - active ####
+#### id (optional) ####
+`id` allows you to specify what the behaviour should be regarding the `id` property of models when it is defined for the model passed to `set`.
+
+If this value is `retain`, then the value of the `id` property of the resulting model will be that of the model before `set` was called.
+
+If this value is 'inherit', then the value of the `id` property of the resulting model will be that of the incoming model passed into `set`.
+
+If this is not defined, then if the model passed to set has a `id` parameter, this will need to match that of the model in the collection or a separate model will be added.
+
+#### active (optional) ####
 `active` is a boolean that allows you to switch off setMatch. If setMatch has been defined in a collection's declaration then you will need to set the `active` property to false to disable setMatch.
