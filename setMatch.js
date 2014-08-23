@@ -20,7 +20,7 @@
         define(['underscore', 'backbone'], factory);
     } else {
         // Browser globals
-        factory( this._, this.Backbone );
+        factory(this._, this.Backbone);
     }
 }(function (_, Backbone) {
     var oldCollectionSet, oldEnsureElement, oldTrigger, newEvents, oldCollection;

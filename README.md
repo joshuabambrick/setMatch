@@ -27,9 +27,9 @@ If `match` is not defined, all parameters must be matched. If you specify that `
 #### id (optional) ####
 `id` allows you to specify what the behaviour should be regarding the `id` property of models when it is defined for the model passed to `set`.
 
-If this value is `retain`, then the value of the `id` property of the resulting model will be that of the model before `set` was called.
+If this value is **'retain'**, then the value of the `id` property of the resulting model will be that of the model before `set` was called.
 
-If this value is 'inherit', then the value of the `id` property of the resulting model will be that of the incoming model passed into `set`.
+If this value is **'inherit'**, then the value of the `id` property of the resulting model will be that of the incoming model passed into `set`.
 
 If this is not defined, then if the model passed to set has a `id` parameter, this will need to match that of the model in the collection or a separate model will be added.
 
