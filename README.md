@@ -4,6 +4,8 @@ A Backbone plugin which allows you to match models in a collection based on attr
 ## Introduction ##
 Backbone setMatch is a Backbone plugin which allows you to match models in a collection based on attributes other than their id. This matching is used every time `set` is called on a collection, explicitly or internally by Backbone. This can be useful in cases where you want to create a more advanced collection which creates a neat representation data as models which is inconsistent with their representation on the server or where the server has no explicit `id` attribute.
 
+As well as being used explicitly, the `set` method is used internally by Backbone's `add` method. `setMatch` is particularly useful when used in conjuction with the [`{merge: true}` parameter](http://backbonejs.org/#Collection-set) set.
+
 ## Usage ##
 In order to use setMatch with any collection, simply define the `setMatch` property in the collection's declaration.
 
@@ -13,16 +15,13 @@ In order to use setMatch with any collection, simply define the `setMatch` prope
 
 The `setMatch` property can either be a boolean or an object.
 
-### setMatch : boolean ###
-If `setMatch` is `true`, models added to the collection will need to match all properties - if it is `false`, setMatch will not be used and the default behaviour occurs.
-
 ### setMatch : object ###
 If `setMatch` is an object, there are many different parameters which may be defined, all of which are optional:
 
 #### match (optional) ####
 `match` provides an array of names of properties which must be matched, a string of a single name of a property which must be matched or a function which takes a property name and returns true if the property should be matched, and false otherwise.
 
-If `match` is not defined, all parameters must be matched. If you specify that `id` must be matched, matching will be dependent on the `id` parameter (see below).
+If `match` is not defined, or takes an unrecognised form, all parameters must be matched. If you specify that `id` must be matched, matching will be dependent on the `id` parameter (see below).
 
 #### id (optional) ####
 `id` allows you to specify what the behaviour should be regarding the `id` property of models when it is defined for the model passed to `set`.
@@ -35,3 +34,6 @@ If this is not defined, then if the model passed to set has a `id` parameter, th
 
 #### active (optional) ####
 `active` is a boolean that allows you to switch off setMatch. If setMatch has been defined in a collection's declaration then you will need to set the `active` property to false to disable setMatch.
+
+### setMatch : array | string | other ###
+If `setMatch` is not a plain object, it will be assumed to take the form of the `match` property above and all other properties will assume their default.
