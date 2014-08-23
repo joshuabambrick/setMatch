@@ -107,4 +107,4 @@
 
         oldCollectionSet.call(thisCollection, incomingModels, options);
     };
-});
+}));
