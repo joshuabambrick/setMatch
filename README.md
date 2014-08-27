@@ -13,7 +13,7 @@ In order to use setMatch with any collection, simply define the `setMatch` prope
         setMatch: /* setMatch parameters */
     });
 
-The `setMatch` property can either be a boolean or an object.
+The `setMatch` property is typically an object, although it may take other forms.
 
 ### setMatch : object ###
 If `setMatch` is an object, there are many different parameters which may be defined, all of which are optional:
