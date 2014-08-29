@@ -79,7 +79,6 @@
 
                 // create `objectToMatch` by comparing property names
                 _.each(incomingModels[currentModelIndex].attributes, function (propertyValue, propertyName) {
-                    console.log(propertyName, shouldMatch(propertyName))
                     if (shouldMatch(propertyName)) {
                         objectToMatch[propertyName] = propertyValue;
                     }
@@ -89,7 +88,6 @@
                 matchedModel = this.findWhere(objectToMatch);
 
                 if (matchedModel) {
-                    console.log('matched')
                     if (incomingModels[currentModelIndex].id != null && matchedModel.id !== incomingModels[currentModelIndex].id) {
                         if (this.setMatch.id === 'inherit') {
                             // use the id of the new element, to assign that of the old
@@ -107,8 +105,6 @@
 
             }
         }
-
-        console.log(incomingModels);
 
         oldCollectionSet.call(this, incomingModels, options);
     };
