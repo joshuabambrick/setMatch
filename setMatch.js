@@ -23,9 +23,7 @@
         factory(this._, this.Backbone);
     }
 }(function (_, Backbone) {
-    var oldCollectionSet, oldEnsureElement, oldTrigger, newEvents, oldCollection;
-
-    oldCollectionSet = Backbone.Collection.prototype.set;
+    var oldCollectionSet = Backbone.Collection.prototype.set;
 
     // support setMatch (instead of `set` matching using ids, it can match based on properties)
     // pass in an array of properties (/one property/a function which receives property names) which must match for the models to considered be the same
